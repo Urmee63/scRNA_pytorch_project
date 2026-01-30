@@ -30,9 +30,11 @@ python pbmc_scanpy_pytorch_baseline.py
     ![UMAP clustering of PBMC cells](figures/umap_pbmc_clusters.png)
 2. ### Confusion matrix — PCA baseline
     ![Confusion matrix PCA](figures/confusion_matrix.png)
+
 3. models/pbmc_cluster_classifier.pt
 4. ### Confusion matrix — HVG baseline
     ![Confusion matrix HVG](figures/confusion_matrix_hvg.png)
+    
 5. models/pbmc_hvg_cluster_classifier.pt
 6. models/pbmc_hvg_classifier_earlystop_best.pt
 7. ### Confusion matrix — HVG with early stopping
