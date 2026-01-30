@@ -24,12 +24,16 @@ pip install numpy pandas matplotlib scikit-learn torch scanpy leidenalg
 python pbmc_scanpy_pytorch_baseline.py
 ```
 
-## Outputs
+## Results
 
-1. figures/umap_pbmc_clusters.png
-2. figures/confusion_matrix.png
+1. ### UMAP clustering
+    ![UMAP clustering of PBMC cells](figures/umap_pbmc_clusters.png)
+2. ### Confusion matrix — PCA baseline
+    ![Confusion matrix PCA](figures/confusion_matrix.png)
 3. models/pbmc_cluster_classifier.pt
-4. figures/confusion_matrix_hvg.png
+4. ### Confusion matrix — HVG baseline
+    ![Confusion matrix HVG](figures/confusion_matrix_hvg.png)
 5. models/pbmc_hvg_cluster_classifier.pt
-6. models\pbmc_hvg_classifier_earlystop_best.pt
-7. figures\confusion_matrix_hvg_earlystop.png
+6. models/pbmc_hvg_classifier_earlystop_best.pt
+7. ### Confusion matrix — HVG with early stopping
+    ![Confusion matrix HVG early stopping](figures/confusion_matrix_hvg_earlystop.png)
