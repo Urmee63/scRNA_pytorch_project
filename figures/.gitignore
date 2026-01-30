@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+scRNA_pytorch_project-env/
+
+# VS Code
+.vscode/
+
+# Data / cache (Scanpy)
+data/
+.cache/
+*.h5ad
+
+# OS
+.DS_Store
+Thumbs.db
