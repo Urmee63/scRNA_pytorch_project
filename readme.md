@@ -4,6 +4,8 @@ This mini-project demonstrates an end-to-end single-cell RNA-seq analysis and de
 
 It emphasizes reproducible workflows, clear evaluation, and model checkpointing, reflecting common practices in applied machine learning research for biological data.
 
+The repository includes both a Python script for fully reproducible execution and a Jupyter notebook version for step-by-step exploration and visualization.
+
 ## What it does
 - Loads PBMC3k single-cell RNA-seq data (Scanpy)
 - Preprocesses: filtering, normalization, log1p, HVG selection
@@ -12,30 +14,42 @@ It emphasizes reproducible workflows, clear evaluation, and model checkpointing,
 - Trains a PyTorch classifier on PCA embeddings to predict cluster IDs
 - Evaluates with a confusion matrix (saved to `figures/`)
 - Saves trained model weights to `models/`
-- ## Baselines
-    - PCA baseline: trains a PyTorch classifier on 50-dimensional PCA embeddings (test acc ~0.91)
-    - HVG baseline: trains a PyTorch classifier directly on 2000 highly-variable gene features with dropout (test acc up to ~0.91; shows overfitting behavior on small data)
-    - HVG + early stopping: trained a PyTorch classifier on highly-variable genes with dropout and early stopping (best test acc ~0.91)
+## Baselines
+- PCA baseline: trains a PyTorch classifier on 50-dimensional PCA embeddings (test acc ~0.91)
+- HVG baseline: trains a PyTorch classifier directly on 2000 highly-variable gene features with dropout (test acc up to ~0.91; shows overfitting behavior on small data)
+- HVG + early stopping: trained a PyTorch classifier on highly-variable genes with dropout and early stopping (best test acc ~0.91)
 
 
 ## How to run
+
+### Option 1: Run the full pipeline (recommended)
+
 ```bash
-pip install numpy pandas matplotlib scikit-learn torch scanpy leidenalg
+- For a minimal install:
+pip install -r requirements-min.txt
+- For fully reproducible versions:
+pip install -r requirements.txt
+
 python pbmc_scanpy_pytorch_baseline.py
 ```
+
+### Option 2: Explore interactively
+
+Open pbmc_scanpy_pytorch_baseline.ipynb in Jupyter or VS Code and run the cells sequentially.
+
 
 ## Results
 
 1. ### UMAP clustering
     ![UMAP clustering of PBMC cells](figures/umap_pbmc_clusters.png)
+
 2. ### Confusion matrix — PCA baseline
     ![Confusion matrix PCA](figures/confusion_matrix.png)
 
-3. models/pbmc_cluster_classifier.pt
-4. ### Confusion matrix — HVG baseline
+3.  ### Confusion matrix — HVG baseline
     ![Confusion matrix HVG](figures/confusion_matrix_hvg.png)
     
-5. models/pbmc_hvg_cluster_classifier.pt
-6. models/pbmc_hvg_classifier_earlystop_best.pt
-7. ### Confusion matrix — HVG with early stopping
+4. ### Confusion matrix — HVG with early stopping
     ![Confusion matrix HVG early stopping](figures/confusion_matrix_hvg_earlystop.png)
+
+5. Model checkpoints are saved under `models/` for each baseline (PCA, HVG, HVG + early stopping).
