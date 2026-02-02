@@ -12,6 +12,8 @@ venv/
 
 # VS Code
 .vscode/
+.vscode
+
 
 # Data / cache (Scanpy)
 data/
